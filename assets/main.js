@@ -76,6 +76,34 @@ if ("IntersectionObserver" in window) {
   reveals.forEach((el) => el.classList.add("in"));
 }
 
+// Screenshot lightbox: any [data-zoom] element opens its image full size
+const zoomables = document.querySelectorAll("[data-zoom]");
+if (zoomables.length) {
+  const box = document.createElement("div");
+  box.className = "lightbox";
+  box.setAttribute("role", "dialog");
+  box.setAttribute("aria-modal", "true");
+  box.innerHTML = `<button class="lightbox-close" aria-label="Close"><svg aria-hidden="true"><use href="assets/icons.svg#close"/></svg></button><img alt="" />`;
+  document.body.append(box);
+  const img = box.querySelector("img");
+  let opener = null;
+  const close = () => {
+    box.classList.remove("open");
+    document.body.classList.remove("lightbox-open");
+    opener?.focus();
+  };
+  zoomables.forEach((el) => el.addEventListener("click", () => {
+    opener = el;
+    img.src = el.dataset.zoom;
+    img.alt = el.dataset.zoomAlt || "";
+    box.classList.add("open");
+    document.body.classList.add("lightbox-open");
+    box.querySelector(".lightbox-close").focus();
+  }));
+  box.addEventListener("click", close);
+  document.addEventListener("keydown", (e) => e.key === "Escape" && box.classList.contains("open") && close());
+}
+
 // Footer year
 document.querySelectorAll("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
 

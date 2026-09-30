@@ -60,23 +60,10 @@
           <div class="hero-note"><span><svg aria-hidden="true"><use href="assets/icons.svg#check-circle"/></svg> Enterprise optical laboratory platform</span><span><svg aria-hidden="true"><use href="assets/icons.svg#check-circle"/></svg> Multi-branch</span></div>
         </div>
         <div class="hero-panel">
-          <div class="ui">
-            <div class="ui-bar"><i></i><i></i><i></i><b>Arco Labs · Production board</b></div>
-            <div class="ui-pad">
-              <div class="ui-kpis">
-                <div class="ui-kpi"><small>Jobs in production</small><b>412</b></div>
-                <div class="ui-kpi"><small>Due today</small><b>86</b></div>
-                <div class="ui-kpi"><small>QC pass rate</small><b>98.2%</b></div>
-              </div>
-              <div class="ui-rows">
-                <div class="ui-row"><b style="width:70px">Surfacing</b><div class="grow"><span style="width:78%"></span></div><span class="badge b-ind">124</span></div>
-                <div class="ui-row"><b style="width:70px">Coating</b><div class="grow"><span style="width:56%"></span></div><span class="badge b-ind">88</span></div>
-                <div class="ui-row"><b style="width:70px">Final QC</b><div class="grow"><span style="width:34%"></span></div><span class="badge b-low">52</span></div>
-                <div class="ui-row"><b style="width:70px">Dispatch</b><div class="grow"><span style="width:62%"></span></div><span class="badge b-ok">97</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="float-card fc1"><i><svg aria-hidden="true"><use href="assets/icons.svg#check"/></svg></i><div>Rx #4821 passed QC 1<small>Moved to Coating</small></div></div>
+          <button class="hero-shot" type="button" data-zoom="assets/img/labs/labs-showcase.webp" data-zoom-alt="Arco Labs on three screens: inventory dashboard, material requisitions and lens sale order entry">
+            <img src="assets/img/labs/labs-showcase.webp" width="1536" height="1024" alt="Arco Labs on three screens: inventory dashboard, material requisitions and lens sale order entry" fetchpriority="high" />
+          </button>
+          <div class="float-card fc1"><i><svg aria-hidden="true"><use href="assets/icons.svg#check"/></svg></i><div>Rx job passed QC 1<small>Moved to Coating</small></div></div>
           <div class="float-card fc2"><i><svg aria-hidden="true"><use href="assets/icons.svg#whatsapp"/></svg></i><div>PO sent on WhatsApp<small>To approved blank vendor</small></div></div>
         </div>
       </div>
@@ -87,38 +74,50 @@
         <div class="section-head reveal">
           <span class="eyebrow"><span class="num">01</span> — See it at work</span>
           <h2>Every lab job, under control.</h2>
-          <p class="lead">One lab ERP for every branch and the head office, with live data.</p>
+          <p class="lead">One lab ERP for every branch and the head office, with live data. These are real screens from Arco Labs.</p>
         </div>
-        <div class="showcase">
-          <article class="show-card reveal">
-            <div class="screen"><div class="ui"><div class="ui-bar"><i></i><i></i><i></i><b>Inventory</b></div><div class="ui-pad">
-              <div class="ui-kpis"><div class="ui-kpi"><small>Stock value</small><b>₹48.2L</b></div><div class="ui-kpi"><small>Items</small><b>3,418</b></div><div class="ui-kpi"><small>Warehouses</small><b>6</b></div></div>
-              <div class="ui-rows">
-                <div class="ui-row">1.56 SV blank<span style="margin-left:auto" class="badge b-ok">In stock</span></div>
-                <div class="ui-row">1.67 HMC blank<span style="margin-left:auto" class="badge b-low">Low</span></div>
-                <div class="ui-row">AR coating kit<span style="margin-left:auto" class="badge b-out">Out</span></div>
-              </div></div></div></div>
-            <div class="body"><span class="step">1</span><span class="kicker">Inventory dashboard</span><h3>Every stock item in one view</h3>
-              <ul class="ticks"><li>Total value, item count, available quantity and warehouses</li><li>Low-stock, out-of-stock, pending POs and reorders flagged</li><li>Quick actions: goods receipt, consumption and stock adjustment</li></ul></div>
+        <div class="feature-rows">
+
+          <article class="feature-row reveal">
+            <button class="shot" type="button" data-zoom="assets/img/labs/inventory-dashboard.webp" data-zoom-alt="Arco Labs Advanced Inventory Dashboard with stock value, items, quantity, warehouses and quick actions">
+              <span class="shot-bar"><i></i><i></i><i></i><span>Inventory › Dashboard</span></span>
+              <img src="assets/img/labs/inventory-dashboard.webp" width="1600" height="792" alt="Arco Labs Advanced Inventory Dashboard with stock value, items, quantity, warehouses and quick actions" loading="lazy" />
+              <span class="shot-zoom"><svg aria-hidden="true"><use href="assets/icons.svg#scan"/></svg> Click to enlarge</span>
+            </button>
+            <div class="feature-text">
+              <span class="kicker"><span class="step">1</span>Inventory dashboard</span>
+              <h3>Every stock item in one view</h3>
+              <p class="muted">An executive command centre for stock balances, procurement activity and warehouse load, live for each branch.</p>
+              <ul class="ticks"><li>Total value, item count, available quantity and warehouses</li><li>Low-stock, out-of-stock, pending POs and reorders flagged</li><li>Quick actions: goods receipt, consumption and stock adjustment</li><li>Export the whole dashboard to PDF in one click</li></ul>
+            </div>
           </article>
-          <article class="show-card reveal">
-            <div class="screen"><div class="ui"><div class="ui-bar"><i></i><i></i><i></i><b>Material requisition</b></div><div class="ui-pad">
-              <div class="flow"><span class="on">Branch request</span><em>→</em><span class="on">HO approval</span><em>→</em><span class="on">Vendor assigned</span><em>→</em><span>PO on WhatsApp</span><em>→</em><span>Invoice confirmed</span></div>
-              <div class="ui-rows">
-                <div class="ui-row">MR-2291 · Pune lab<span style="margin-left:auto" class="badge b-ind">Approved</span></div>
-                <div class="ui-row">MR-2292 · Nashik lab<span style="margin-left:auto" class="badge b-low">Pending</span></div>
-              </div></div></div></div>
-            <div class="body"><span class="step">2</span><span class="kicker">Material requisitions</span><h3>Purchasing with approvals</h3>
-              <ul class="ticks"><li>Branches raise material requirements to head office</li><li>The national inventory head assigns approved vendors</li><li>POs sent on WhatsApp; invoices confirmed before payment</li></ul></div>
+
+          <article class="feature-row reverse reveal">
+            <button class="shot" type="button" data-zoom="assets/img/labs/material-requisitions.webp" data-zoom-alt="Arco Labs Material Requisitions and Vendor Orders desk for the national inventory head">
+              <span class="shot-bar"><i></i><i></i><i></i><span>Inventory › Material Requisitions</span></span>
+              <img src="assets/img/labs/material-requisitions.webp" width="1600" height="792" alt="Arco Labs Material Requisitions and Vendor Orders desk for the national inventory head" loading="lazy" />
+              <span class="shot-zoom"><svg aria-hidden="true"><use href="assets/icons.svg#scan"/></svg> Click to enlarge</span>
+            </button>
+            <div class="feature-text">
+              <span class="kicker"><span class="step">2</span>Material requisitions</span>
+              <h3>Purchasing with approvals</h3>
+              <p class="muted">A central procurement desk: branches raise requirements, head office reviews them, assigns suppliers and places orders.</p>
+              <ul class="ticks"><li>Branches raise material requirements to head office</li><li>The national inventory head assigns approved vendors</li><li>POs sent on WhatsApp; invoices confirmed before payment</li><li>Filter by status, priority, department and invoice state</li></ul>
+            </div>
           </article>
-          <article class="show-card reveal">
-            <div class="screen"><div class="ui"><div class="ui-bar"><i></i><i></i><i></i><b>Rx order entry</b></div><div class="ui-pad">
-              <table><thead><tr><th>Eye</th><th>SPH</th><th>CYL</th><th>Axis</th><th>Add</th></tr></thead>
-              <tbody><tr><td>R</td><td>-2.25</td><td>-0.75</td><td>180</td><td>+1.50</td></tr><tr><td>L</td><td>-2.00</td><td>-0.50</td><td>175</td><td>+1.50</td></tr></tbody></table>
-              <div class="total"><span>1.60 · BlueCut HMC · Progressive</span><span>₹3,240 + GST</span></div>
-            </div></div></div>
-            <div class="body"><span class="step">3</span><span class="kicker">Rx order entry</span><h3>Speed-punched Rx orders</h3>
-              <ul class="ticks"><li>Brand, Rx type, index, coating, tint, DIA and fitting type</li><li>SPH, CYL, axis, add, prism and corridor for each eye</li><li>Tab and Enter to move fast; discount and GST worked out</li></ul></div>
+
+          <article class="feature-row reveal">
+            <button class="shot" type="button" data-zoom="assets/img/labs/lens-sale-order.webp" data-zoom-alt="Arco Labs Lens Sale Order Entry with lens specifications and right and left eye prescription rows">
+              <span class="shot-bar"><i></i><i></i><i></i><span>Sale Order Management › Lens Sale Order</span></span>
+              <img src="assets/img/labs/lens-sale-order.webp" width="1600" height="792" alt="Arco Labs Lens Sale Order Entry with lens specifications and right and left eye prescription rows" loading="lazy" />
+              <span class="shot-zoom"><svg aria-hidden="true"><use href="assets/icons.svg#scan"/></svg> Click to enlarge</span>
+            </button>
+            <div class="feature-text">
+              <span class="kicker"><span class="step">3</span>Rx order entry</span>
+              <h3>Speed-punched Rx orders</h3>
+              <p class="muted">Built for the order desk: move through every field with the keyboard, then forward the order straight to production.</p>
+              <ul class="ticks"><li>Brand, Rx type, index, coating, tint, DIA and fitting type</li><li>SPH, CYL, axis, add, prism and corridor for each eye</li><li>Tab and Enter to move fast; discount and GST worked out</li><li>Save as draft, forward the order or open the order queue</li></ul>
+            </div>
           </article>
         </div>
       </div>

@@ -596,6 +596,48 @@ ul { margin: 0; padding: 0; list-style: none; }
 .hero-panel .fc2 i { background: var(--indigo-soft); color: var(--indigo); }
 @media (max-width: 600px) { .hero-panel .fc1 { left: 8px; } .hero-panel .fc2 { right: 8px; } }
 
+/* ---------- Real product screenshots ---------- */
+.hero-shot { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: 22px; overflow: hidden; box-shadow: 0 40px 80px -30px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.08); transition: transform .3s; }
+.hero-shot:hover { transform: translateY(-4px); }
+.hero-shot img { width: 100%; height: auto; }
+
+.feature-rows { display: grid; gap: 88px; }
+@media (max-width: 760px) { .feature-rows { gap: 64px; } }
+.feature-row { display: grid; grid-template-columns: 1.45fr 1fr; gap: 56px; align-items: center; }
+.feature-row.reverse > .shot { order: 2; }
+@media (max-width: 960px) { .feature-row { grid-template-columns: 1fr; gap: 28px; } .feature-row.reverse > .shot { order: 0; } }
+.shot {
+  position: relative; display: block; width: 100%; padding: 0; text-align: left; cursor: zoom-in; font: inherit;
+  background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
+  box-shadow: 0 30px 60px -28px rgba(10,15,31,.35); transition: transform .25s, box-shadow .25s;
+}
+.shot:hover { transform: translateY(-4px); box-shadow: 0 40px 70px -28px rgba(67,56,255,.35); }
+.shot-bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; background: var(--surface-2); border-bottom: 1px solid var(--line); }
+.shot-bar i { width: 10px; height: 10px; border-radius: 50%; background: #d7d9e3; }
+.shot-bar i:first-child { background: #ff6b6b; } .shot-bar i:nth-child(2) { background: #ffc94d; } .shot-bar i:nth-child(3) { background: #3ecf6e; }
+.shot-bar span { margin-left: 10px; flex: 1; padding: 4px 12px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font-size: 12.5px; color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.shot img { width: 100%; height: auto; }
+.shot-zoom {
+  position: absolute; right: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 999px;
+  background: rgba(10,15,31,.85); color: #fff; font-size: 12.5px; font-weight: 600; opacity: 0; transform: translateY(6px); transition: .2s;
+}
+.shot-zoom svg { width: 14px; height: 14px; }
+.shot:hover .shot-zoom, .shot:focus-visible .shot-zoom { opacity: 1; transform: none; }
+@media (hover: none) { .shot-zoom { opacity: 1; transform: none; } }
+.feature-text .kicker { display: inline-flex; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--indigo); }
+.feature-text .step { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--navy); color: #fff; font-size: 13px; letter-spacing: 0; }
+.feature-text h3 { font-size: clamp(26px, 3vw, 34px); margin: 16px 0 12px; }
+.feature-text .ticks { margin-top: 20px; display: grid; gap: 11px; }
+.feature-text .ticks li { font-size: 15.5px; }
+
+/* Lightbox */
+.lightbox { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 24px; background: rgba(6,9,20,.88); backdrop-filter: blur(6px); opacity: 0; visibility: hidden; transition: .2s; cursor: zoom-out; }
+.lightbox.open { opacity: 1; visibility: visible; }
+.lightbox img { max-width: min(1600px, 100%); max-height: calc(100vh - 96px); width: auto; height: auto; border-radius: 12px; box-shadow: 0 40px 100px -20px rgba(0,0,0,.8); }
+.lightbox-close { position: absolute; top: 18px; right: 18px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.08); color: #fff; display: grid; place-items: center; cursor: pointer; }
+.lightbox-close svg { width: 20px; height: 20px; }
+body.lightbox-open { overflow: hidden; }
+
 /* Reveal on scroll */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.in { opacity: 1; transform: none; }
