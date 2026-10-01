@@ -89,38 +89,102 @@
     <section class="section section-tint" id="inbox">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow"><span class="num">02</span> — Team Inbox</span>
-          <h2>Every chat, with the customer's Shopify story beside it.</h2>
-          <p class="lead">Your team replies on WhatsApp while a live Shopify drawer shows lifetime value, open carts and order history — with one-click actions.</p>
+          <span class="eyebrow"><span class="num">02</span> — A glimpse inside</span>
+          <h2>See ARCO Communication at work.</h2>
+          <p class="lead">A quick tour of the real product — from the home dashboard to the team inbox living inside your Shopify admin.</p>
         </div>
-        <div class="ui reveal" style="box-shadow:var(--shadow-lg)">
-          <div class="ui-bar"><i></i><i></i><i></i><b>ARCO Communication · Team Inbox</b></div>
-          <div class="inbox">
-            <div class="inbox-list">
-              <div class="on"><span class="av">NP</span><span><b>Nilesh Patel</b><small>Is COD available?</small></span><span class="un">2</span></div>
-              <div><span class="av">AK</span><span><b>Aisha Khan</b><small>Thanks, received it!</small></span></div>
-              <div><span class="av">RM</span><span><b>Rohan Mehta</b><small>Where is my order?</small></span><span class="un">1</span></div>
-              <div><span class="av">SV</span><span><b>Sneha Verma</b><small>Do you have size M?</small></span></div>
-            </div>
-            <div class="inbox-chat">
-              <div class="bubble">Hi, is COD available for the snowboard?<span class="meta">10:41</span></div>
-              <div class="bubble out">Yes! COD is available across India. Want me to send you the link to your saved cart?<span class="meta">10:42 ✓✓</span></div>
-              <div class="bubble">Yes please 🙏<span class="meta">10:42</span></div>
-              <div class="bubble out">Here you go — code SAVE10 is already applied 👉 your-store.com/cart/…<span class="meta">10:43 ✓✓</span></div>
-            </div>
-            <div class="inbox-drawer">
-              <div class="drawer-kpis">
-                <div><small>Lifetime value</small><b>₹12,480</b></div>
-                <div><small>Orders</small><b>7</b></div>
-                <div><small>Avg. order</small><b>₹1,783</b></div>
-                <div><small>Tier</small><b>Returning</b></div>
+        <div class="glimpse reveal" data-tabs>
+          <div class="glimpse-tabs" role="tablist" aria-label="Product tour">
+            <button role="tab" id="tab-dashboard" aria-controls="panel-dashboard" aria-selected="true"><svg aria-hidden="true"><use href="assets/icons.svg#grid"/></svg>Dashboard</button>
+            <button role="tab" id="tab-inbox" aria-controls="panel-inbox" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="assets/icons.svg#chat"/></svg>Team Inbox</button>
+            <button role="tab" id="tab-campaigns" aria-controls="panel-campaigns" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="assets/icons.svg#send"/></svg>Campaigns</button>
+            <button role="tab" id="tab-templates" aria-controls="panel-templates" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="assets/icons.svg#clipboard"/></svg>Template builder</button>
+            <button role="tab" id="tab-automations" aria-controls="panel-automations" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="assets/icons.svg#zap"/></svg>Automations</button>
+            <button role="tab" id="tab-analytics" aria-controls="panel-analytics" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="assets/icons.svg#chart"/></svg>Analytics</button>
+          </div>
+          
+          <div class="glimpse-panel" role="tabpanel" id="panel-dashboard" aria-labelledby="tab-dashboard">
+            <button class="shot" type="button" data-zoom="assets/img/communication/dashboard.webp" data-zoom-alt="ARCO Communication dashboard with AI agent setup, connected WhatsApp number, greeting flow and FAQ auto-replies">
+              <span class="shot-bar"><i></i><i></i><i></i><span>ARCO Communication › Dashboard</span></span>
+              <img src="assets/img/communication/dashboard.webp" width="1345" height="568" alt="ARCO Communication dashboard with AI agent setup, connected WhatsApp number, greeting flow and FAQ auto-replies" loading="lazy" />
+              <span class="shot-zoom"><svg aria-hidden="true"><use href="assets/icons.svg#scan"/></svg> Click to enlarge</span>
+            </button>
+            <div class="glimpse-caption">
+              <div>
+                <h3>Everything set up from one home screen</h3>
+                <p class="muted">The dashboard walks you through going live, and shows at a glance what's connected and what's switched on.</p>
               </div>
-              <div class="drawer-card"><h5>🛒 Active abandoned cart</h5>Snowboard Liquid × 1 · ₹749<div class="acts"><span>⚡ Send recovery</span><span>💬 Draft</span></div></div>
-              <div class="drawer-card"><h5>Recent orders</h5>
-                <div style="display:flex;justify-content:space-between">#1009 <span class="badge b-ok">Paid</span></div>
-                <div style="display:flex;justify-content:space-between;margin-top:4px">#1004 <span class="badge b-low">COD</span></div>
-                <div class="acts"><span>🚚 Tracking</span><span>🛡️ Verify COD</span></div>
+              <ul class="ticks"><li>WhatsApp and Instagram, side by side</li><li>Build an AI agent to answer, qualify and assist</li><li>Greeting flow, FAQ auto-replies, team and contacts</li></ul>
+            </div>
+          </div>
+          <div class="glimpse-panel" role="tabpanel" id="panel-inbox" aria-labelledby="tab-inbox" data-inactive>
+            <button class="shot" type="button" data-zoom="assets/img/communication/inbox.webp" data-zoom-alt="ARCO Communication team inbox inside Shopify admin showing WhatsApp conversations and a cart recovery message">
+              <span class="shot-bar"><i></i><i></i><i></i><span>Shopify admin › ARCO Communication › Team Inbox</span></span>
+              <img src="assets/img/communication/inbox.webp" width="1152" height="539" alt="ARCO Communication team inbox inside Shopify admin showing WhatsApp conversations and a cart recovery message" loading="lazy" />
+              <span class="shot-zoom"><svg aria-hidden="true"><use href="assets/icons.svg#scan"/></svg> Click to enlarge</span>
+            </button>
+            <div class="glimpse-caption">
+              <div>
+                <h3>Reply to customers without leaving Shopify</h3>
+                <p class="muted">The team inbox runs inside your Shopify admin. Every WhatsApp chat sits next to that customer's orders and carts.</p>
               </div>
+              <ul class="ticks"><li>Open chats tagged by source, such as campaign leads</li><li>See who is online and inside the 24-hour window</li><li>Cart recovery and COD messages in the same thread</li></ul>
+            </div>
+          </div>
+          <div class="glimpse-panel" role="tabpanel" id="panel-campaigns" aria-labelledby="tab-campaigns" data-inactive>
+            <button class="shot" type="button" data-zoom="assets/img/communication/campaigns.webp" data-zoom-alt="Create New Campaign window listing Meta approved WhatsApp templates with a phone preview of the message">
+              <span class="shot-bar"><i></i><i></i><i></i><span>Campaigns › Create new campaign</span></span>
+              <img src="assets/img/communication/campaigns.webp" width="940" height="550" alt="Create New Campaign window listing Meta approved WhatsApp templates with a phone preview of the message" loading="lazy" />
+              <span class="shot-zoom"><svg aria-hidden="true"><use href="assets/icons.svg#scan"/></svg> Click to enlarge</span>
+            </button>
+            <div class="glimpse-caption">
+              <div>
+                <h3>Launch a broadcast in a few clicks</h3>
+                <p class="muted">Pick a Meta-approved template or start from a sample idea, and see exactly how it will look on a customer's phone.</p>
+              </div>
+              <ul class="ticks"><li>Approved templates, ready to send</li><li>Ready-made sample ideas to start from</li><li>Live phone preview before you send</li></ul>
+            </div>
+          </div>
+          <div class="glimpse-panel" role="tabpanel" id="panel-templates" aria-labelledby="tab-templates" data-inactive>
+            <button class="shot" type="button" data-zoom="assets/img/communication/templates.webp" data-zoom-alt="New WhatsApp Template builder with template details, header options and a live message preview">
+              <span class="shot-bar"><i></i><i></i><i></i><span>Templates › New WhatsApp template</span></span>
+              <img src="assets/img/communication/templates.webp" width="1345" height="493" alt="New WhatsApp Template builder with template details, header options and a live message preview" loading="lazy" />
+              <span class="shot-zoom"><svg aria-hidden="true"><use href="assets/icons.svg#scan"/></svg> Click to enlarge</span>
+            </button>
+            <div class="glimpse-caption">
+              <div>
+                <h3>Design templates and submit them to Meta</h3>
+                <p class="muted">Build WhatsApp-compliant message templates step by step, with a live preview as you type.</p>
+              </div>
+              <ul class="ticks"><li>Text, image, video or document headers</li><li>Variables for names, order numbers and more</li><li>Save a draft or submit for approval from the same page</li></ul>
+            </div>
+          </div>
+          <div class="glimpse-panel" role="tabpanel" id="panel-automations" aria-labelledby="tab-automations" data-inactive>
+            <button class="shot" type="button" data-zoom="assets/img/communication/automations.webp" data-zoom-alt="Basic Automations page with working hours, out of office, welcome and delayed response messages">
+              <span class="shot-bar"><i></i><i></i><i></i><span>Automation › Basic automations</span></span>
+              <img src="assets/img/communication/automations.webp" width="1345" height="553" alt="Basic Automations page with working hours, out of office, welcome and delayed response messages" loading="lazy" />
+              <span class="shot-zoom"><svg aria-hidden="true"><use href="assets/icons.svg#scan"/></svg> Click to enlarge</span>
+            </button>
+            <div class="glimpse-caption">
+              <div>
+                <h3>Answer instantly, even when you're away</h3>
+                <p class="muted">Set your working hours once and let ARCO handle welcomes, out-of-office replies and delayed-response nudges.</p>
+              </div>
+              <ul class="ticks"><li>Welcome, out-of-office and delayed replies</li><li>Custom auto-replies, workflows and AI intent matching</li><li>WhatsApp AI agent, WhatsApp forms and a test simulator</li></ul>
+            </div>
+          </div>
+          <div class="glimpse-panel" role="tabpanel" id="panel-analytics" aria-labelledby="tab-analytics" data-inactive>
+            <button class="shot" type="button" data-zoom="assets/img/communication/analytics.webp" data-zoom-alt="Chat analytics showing automation messages sent, total conversations, response wait times and resolution time">
+              <span class="shot-bar"><i></i><i></i><i></i><span>Support › Chat analytics</span></span>
+              <img src="assets/img/communication/analytics.webp" width="1048" height="477" alt="Chat analytics showing automation messages sent, total conversations, response wait times and resolution time" loading="lazy" />
+              <span class="shot-zoom"><svg aria-hidden="true"><use href="assets/icons.svg#scan"/></svg> Click to enlarge</span>
+            </button>
+            <div class="glimpse-caption">
+              <div>
+                <h3>Know how fast your team responds</h3>
+                <p class="muted">Chat analytics show whether customers get timely replies and how quickly their issues are resolved.</p>
+              </div>
+              <ul class="ticks"><li>Automation messages sent, by type</li><li>Conversations, responded and resolved</li><li>First-response, average wait and resolution times</li></ul>
             </div>
           </div>
         </div>

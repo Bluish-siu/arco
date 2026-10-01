@@ -76,6 +76,29 @@ if ("IntersectionObserver" in window) {
   reveals.forEach((el) => el.classList.add("in"));
 }
 
+// Tabs (product tour). Without JS every panel simply stays visible.
+document.querySelectorAll("[data-tabs]").forEach((root) => {
+  const tabs = [...root.querySelectorAll('[role="tab"]')];
+  const select = (tab, focus) => {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute("aria-selected", String(on));
+      t.tabIndex = on ? 0 : -1;
+      root.querySelector(`#${t.getAttribute("aria-controls")}`).hidden = !on;
+    });
+    if (focus) tab.focus();
+    tab.scrollIntoView({ block: "nearest", inline: "nearest" });
+  };
+  root.querySelectorAll("[data-inactive]").forEach((p) => (p.hidden = true));
+  tabs.forEach((tab, i) => {
+    tab.addEventListener("click", () => select(tab));
+    tab.addEventListener("keydown", (e) => {
+      const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+      if (step) select(tabs[(i + step + tabs.length) % tabs.length], true);
+    });
+  });
+});
+
 // Screenshot lightbox: any [data-zoom] element opens its image full size
 const zoomables = document.querySelectorAll("[data-zoom]");
 if (zoomables.length) {
