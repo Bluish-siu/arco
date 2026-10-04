@@ -1,10 +1,11 @@
 /* ARCO — site behaviour */
 
-// Contact details shown across the site. Replace the placeholders with real values.
+// Contact details shown across the site.
+// Leave a value empty ("") to hide it everywhere; with no email, enquiries go to WhatsApp.
 const ARCO_CONTACT = {
-  email: "hello@arco.example",
-  phone: "+91 00000 00000",
-  whatsapp: "910000000000", // digits only, with country code — used for wa.me links
+  email: "",
+  phone: "+91 90046 29888",
+  whatsapp: "919004629888", // digits only, with country code — used for wa.me links
   address: "India",
 };
 
@@ -14,7 +15,10 @@ document.documentElement.classList.remove("no-js");
 document.querySelectorAll("[data-contact]").forEach((el) => {
   const key = el.dataset.contact;
   const value = ARCO_CONTACT[key];
-  if (!value) return;
+  if (!value) {
+    (el.closest("li") || el).hidden = true;
+    return;
+  }
   if (el.tagName === "A") {
     if (key === "email") el.href = `mailto:${value}`;
     if (key === "phone") el.href = `tel:${value.replace(/\s/g, "")}`;
@@ -154,17 +158,28 @@ if (form) {
     ].join("\n");
   };
 
+  const sendWhatsApp = () => {
+    window.open(`https://wa.me/${ARCO_CONTACT.whatsapp}?text=${encodeURIComponent(compose())}`, "_blank", "noopener");
+    form.classList.add("sent");
+  };
+
+  // No email configured: WhatsApp becomes the only way to send
+  if (!ARCO_CONTACT.email) {
+    form.querySelector('button[type="submit"]').hidden = true;
+    const note = form.querySelector(".form-note");
+    if (note) note.textContent = "Your enquiry opens in WhatsApp, ready to send.";
+  }
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     if (!form.reportValidity()) return;
+    if (!ARCO_CONTACT.email) return sendWhatsApp();
     const subject = encodeURIComponent(`ARCO enquiry — ${new FormData(form).get("company") || new FormData(form).get("name")}`);
     window.location.href = `mailto:${ARCO_CONTACT.email}?subject=${subject}&body=${encodeURIComponent(compose())}`;
     form.classList.add("sent");
   });
 
   form.querySelector("[data-send-whatsapp]")?.addEventListener("click", () => {
-    if (!form.reportValidity()) return;
-    window.open(`https://wa.me/${ARCO_CONTACT.whatsapp}?text=${encodeURIComponent(compose())}`, "_blank", "noopener");
-    form.classList.add("sent");
+    if (form.reportValidity()) sendWhatsApp();
   });
 }
