@@ -1,9 +1,9 @@
 /* ARCO — site behaviour */
 
 // Contact details shown across the site.
-// Leave a value empty ("") to hide it everywhere; with no email, enquiries go to WhatsApp.
+// Leave a value empty ("") to hide it everywhere. The contact form always sends via WhatsApp.
 const ARCO_CONTACT = {
-  email: "",
+  email: "Sales@arcooptics.com",
   phone: "+91 90046 29888",
   whatsapp: "919004629888", // digits only, with country code — used for wa.me links
   address: "India",
@@ -158,28 +158,11 @@ if (form) {
     ].join("\n");
   };
 
-  const sendWhatsApp = () => {
-    window.open(`https://wa.me/${ARCO_CONTACT.whatsapp}?text=${encodeURIComponent(compose())}`, "_blank", "noopener");
-    form.classList.add("sent");
-  };
-
-  // No email configured: WhatsApp becomes the only way to send
-  if (!ARCO_CONTACT.email) {
-    form.querySelector('button[type="submit"]').hidden = true;
-    const note = form.querySelector(".form-note");
-    if (note) note.textContent = "Your enquiry opens in WhatsApp, ready to send.";
-  }
-
+  // Enquiries are sent on WhatsApp
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     if (!form.reportValidity()) return;
-    if (!ARCO_CONTACT.email) return sendWhatsApp();
-    const subject = encodeURIComponent(`ARCO enquiry — ${new FormData(form).get("company") || new FormData(form).get("name")}`);
-    window.location.href = `mailto:${ARCO_CONTACT.email}?subject=${subject}&body=${encodeURIComponent(compose())}`;
+    window.open(`https://wa.me/${ARCO_CONTACT.whatsapp}?text=${encodeURIComponent(compose())}`, "_blank", "noopener");
     form.classList.add("sent");
-  });
-
-  form.querySelector("[data-send-whatsapp]")?.addEventListener("click", () => {
-    if (form.reportValidity()) sendWhatsApp();
   });
 }
